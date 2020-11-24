@@ -18,10 +18,12 @@ SYNOPSIS
         $0 [-h|--help|-?] [group]
 
 DESCRIPTION
-        wbinfo is not allowed to recurse into AD's group structure, so getent 
-        can't lookup groups by a standard nss lookup. Instead, this script 
-	gets all available uids from AD, probe for their individual group
-        membership, and collecting and presenting the result as groups.
+
+        wbinfo may not be allowed to recurse into AD's group
+        structure, so libc's getent can't lookup groups by a standard
+        nss lookup. Instead, this script gets all available uids from
+        AD, probing each for their individual group membership, and
+        collecting and presenting the result as groups.
 
         This script does NOT list local unix groups. It only lists groups
 	found by wbinfo lookups against AD.
